@@ -4,7 +4,7 @@ function media(query, match, nomatch) {
 	return readable(false, set => {
 		const mql = window.matchMedia(query)
 		mql.onchange = ev => set(ev.matches ? match : nomatch)
-		set(ev.match ? match : nomatch)
+		set(ev.matches ? match : nomatch)
 	})
 }
 
