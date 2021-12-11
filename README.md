@@ -7,8 +7,8 @@ A utility library to use media query as stores.
 `mediaStore` is a function taking three arguments:
 
 - a media query
-- the value to return if true
-- the value to return if false
+- the value to return if true (default: true)
+- the value to return if false (default: false)
 
 ## Example
 
@@ -31,6 +31,15 @@ For accessibility reasons it is often required to set the duration of animations
 </script>
 
 <div in:slide={{ duration: $duration }}>...</div>
+```
+
+## Prefers Dark Mode
+
+Another convenience store is for `prefers-color-scheme: dark`
+
+```js
+import { darkmode } from "@arzidava/svelte-media-store";
+const isDark = darkmode();
 ```
 
 ## Demo
