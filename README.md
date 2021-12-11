@@ -32,3 +32,7 @@ For accessibility reasons it is often required to set the duration of animations
 
 <div in:slide={{ duration: $duration }}>...</div>
 ```
+
+## Demo
+
+[Repl](https://svelte.dev/repl/a3a327edf4854e9fbd27e475eea2907e?version=3.44.2)
