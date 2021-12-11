@@ -1,0 +1,9 @@
+{
+  "name": "@arzidava/svelte-media-store",
+  "version": "0.1.0",
+  "description": "",
+  "repository": "https://github.com/arzidava/svelte-media-store",
+  "main": "index.js",
+  "author": "Stephane Vanraes",
+  "license": "ISC"
+}
