@@ -42,6 +42,12 @@ import { darkmode } from "@arzidava/svelte-media-store";
 const isDark = darkmode();
 ```
 
+## Use with SvelteKit
+
+The store relies on `window.matchMedia` to provide it's values, but during SSR `window` is not defined and therefore the code cannot run. It does need to have a value though, so it will default to the `false` parameter.
+
+This can cause some flickering if the server renders with `false` and the page renders with `true`, if possible add a browser check for SvelteKit.
+
 ## Demo
 
 [Repl](https://svelte.dev/repl/a3a327edf4854e9fbd27e475eea2907e?version=3.44.2)
