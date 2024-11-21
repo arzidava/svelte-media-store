@@ -1,12 +1,12 @@
 {
   "name": "@arzidava/svelte-media-store",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A utility library to use media query as stores.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arzidava/svelte-media-store.git"
   },
-  "main": "index.server.js",
+  "main": "index.svelte.js",
   "author": "Stephane Vanraes",
   "license": "ISC",
   "bugs": {
