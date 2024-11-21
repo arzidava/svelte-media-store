@@ -1,18 +1,24 @@
-import { readable } from 'svelte/store'
-
 function media(query, match = true, nomatch = false) {
-	return readable(false, set => {
-		if (typeof window !== 'undefined') {
-			const mql = window.matchMedia(query)
-			mql.onchange = ev => set(ev.matches ? match : nomatch)
-			set(mql.matches ? match : nomatch)
-		} else {
-			set(nomatch)
-		}
-	})
+  let state = $state(nomatch);
+
+  if (typeof window !== 'undefined') {
+    const mql = window.matchMedia(query);
+    mql.onchange = (ev) => (state = ev.matches ? match : nomatch);
+    state = mql.matches ? match : nomatch;
+  } else {
+    state = nomatch;
+  }
+
+  return {
+    get current() {
+      return state;
+    },
+  };
 }
 
-export default media
+export default media;
 
-export const reduced = (match, nomatch) => media('(prefers-reduced-motion)', match, nomatch)
-export const darkmode = (match, nomatch) => media('(prefers-color-scheme: dark)', match, nomatch)
+export const reduced = (match = true, nomatch = true) =>
+  media('(prefers-reduced-motion)', match, nomatch);
+export const darkmode = (match = true, nomatch = true) =>
+  media('(prefers-color-scheme: dark)', match, nomatch);

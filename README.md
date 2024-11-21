@@ -1,24 +1,26 @@
 # svelte-media-store
 
-A utility library to use media query as stores.
+A utility library providing a rune reacting to media queries.
 
 ## Usage
 
-`mediaStore` is a function taking three arguments:
+`matchMedia` is a function taking three arguments:
 
 - a media query
 - the value to return if true (default: true)
 - the value to return if false (default: false)
 
+It returns an object with a single property `current`.
+
 ## Example
 
 ```js
-import mediaStore from "@arzidava/svelte-media-store";
+import matchMedia from '@arzidava/svelte-media-store';
 
-const mobile = mediaStore("(max-width: 400px)", 400, 0);
+const mobile = matchMedia('(max-width: 400px)', 400, 0);
 ```
 
-With this store `$mobile` will return _400_ on screens smaller than 400px and _0_ on larger.
+With this store `mobile.current` will return _400_ on screens smaller than 400px and _0_ on larger.
 
 ## Prefers reduced motion
 
@@ -38,7 +40,7 @@ For accessibility reasons it is often required to set the duration of animations
 Another convenience store is for `prefers-color-scheme: dark`
 
 ```js
-import { darkmode } from "@arzidava/svelte-media-store";
+import { darkmode } from '@arzidava/svelte-media-store';
 const isDark = darkmode();
 ```
 

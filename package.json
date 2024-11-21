@@ -1,6 +1,6 @@
 {
   "name": "@arzidava/svelte-media-store",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "A utility library to use media query as stores.",
   "repository": {
     "type": "git",
