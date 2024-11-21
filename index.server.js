@@ -18,7 +18,7 @@ function media(query, match = true, nomatch = false) {
 
 export default media;
 
-export const reduced = (match = true, nomatch = true) =>
+export const reduced = (match = true, nomatch = false) =>
   media('(prefers-reduced-motion)', match, nomatch);
-export const darkmode = (match = true, nomatch = true) =>
+export const darkmode = (match = true, nomatch = false) =>
   media('(prefers-color-scheme: dark)', match, nomatch);
