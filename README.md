@@ -1,3 +1,12 @@
+> **DEPRECATED**
+> This functionality is now built-in Svelte with v5.7.0
+> https://svelte.dev/docs/svelte/svelte-reactivity#MediaQuery
+
+---
+---
+---
+
+
 # svelte-media-store
 
 A utility library providing a rune reacting to media queries.
